@@ -24,7 +24,7 @@ public class ProfileEsto {
 
 
     public void positiveTestOfAuthorizationMethods() {
-        Configuration.holdBrowserOpen = true;
+//        Configuration.holdBrowserOpen = true;
 //        open("https://profile.esto.ee/login");
 //        $(By.xpath("//a[@data-cy='method-mobile-id']")).shouldBe(Condition.exist);
 //        $(By.xpath("//a[@data-cy='method-mobile-id']")).shouldBe(Condition.visible);
@@ -69,7 +69,7 @@ public class ProfileEsto {
     @Test
 
     public void negativeTestOfAuthorizationSmartId() {
-        Configuration.holdBrowserOpen = true;
+//        Configuration.holdBrowserOpen = true;
 //        open("https://profile.esto.ee/login");
 //        $(By.xpath("//a[@data-cy='method-smart-id']")).shouldBe(Condition.visible);
 //        $(By.xpath("//a[@data-cy='method-smart-id']")).click();
@@ -90,14 +90,12 @@ public class ProfileEsto {
         loginPage.checkSmartIdLoginButton();
         loginPage.clickSmartIdLoginButton();
         loginPage.checkSmartIdValidationError();
-
     }
 
     @Test
     public void negativeTestOfAuthorizationPassword() {
-        Configuration.holdBrowserOpen = true;
+//        Configuration.holdBrowserOpen = true;
 //        open("https://profile.esto.ee/login");
-
 //        $(By.xpath("//a[@data-cy='method-password']")).shouldBe(Condition.visible);
 //        $(By.xpath("//a[@data-cy='method-password']")).click();
 ////        $(By.xpath("//esto-text-input[@data-cy='username-input']")).shouldBe(Condition.visible);

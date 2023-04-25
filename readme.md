@@ -22,11 +22,9 @@ Check list for Authorization https://profile.esto.ee/login/password
 
 Check list for automation tests 
 
-| No  |                             Check name                              |    Status    | 
-|-----|:-------------------------------------------------------------------:|:------------:|
-| 1   |     Every method is visible. User is able to select any method.     |     Pass     |
-| 2   |             Every method have additional fields of text             |     Pass     |
-|     |                                                                     |     Pass     |
-| 4   |         Notification when trying to login with empty fields         |     Pass     |
-| 5   | When you click on the fields, the color of the frame becomes black  |     Pass     |
-| 6   |                 Log in button is visible and active                 |     Pass     |
+| No  |                             Check name                             |    Status    | 
+|-----|:------------------------------------------------------------------:|:------------:|
+| 1   |    Every method is visible. User is able to select any method.     |     Pass     |
+| 2   |            Every method have additional fields of text             |     Pass     |
+| 3   |    Authorization with incorrect credentials for Smart ID method    |     Pass     |
+| 4   |    Authorization with incorrect credentials for Password method    |     Pass     |
