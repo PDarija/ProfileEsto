@@ -78,7 +78,29 @@ public class LoginPage {
         $(By.xpath("//*[@id='login-field']/div/input")).setValue(query);
     }
 
+    public static void clickSmartIdLoginButton() {
+        $(By.xpath("//button[@data-cy='smart-id-login-button']")).click();
+    }
 
+    public void checkSmartIdValidationError() {
+        $(By.xpath("//esto-error[@data-cy='smart-id-validation-error']")).shouldBe(Condition.exist);
+    }
+    public static void InsertUsername(String query){
+        $(By.xpath("//*[@data-cy='username-input']/div/input")).setValue(query);
+    }
+
+    public static void InsertPassword(String query){
+        $(By.xpath("//*[@data-cy='password-input']/div/input")).setValue(query);
+    }
+
+    public static void clickPasswordLoginButton() {
+
+        $(By.xpath("//button[@data-cy='password-login-button']")).click();
+    }
+
+    public static void checkPasswordLoginError() {
+        $(By.xpath("//span[@data-cy='password-login-error']")).shouldBe(Condition.visible);
+    }
 
 
 

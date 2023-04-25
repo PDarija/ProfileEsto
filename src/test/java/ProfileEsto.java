@@ -77,9 +77,9 @@ public class ProfileEsto {
 //        $(By.xpath("//button[@data-cy='smart-id-login-button']")).shouldBe(Condition.visible);
 //        SelenideElement idCodeInput = $(By.xpath("//*[@id='login-field']/div/input"));
 //        idCodeInput.setValue("13465");
-        $(By.xpath("//button[@data-cy='smart-id-login-button']")).shouldBe(Condition.visible);
-        $(By.xpath("//button[@data-cy='smart-id-login-button']")).click();
-        $(By.xpath("//esto-error[@data-cy='smart-id-validation-error']")).shouldBe(Condition.visible);
+//        $(By.xpath("//button[@data-cy='smart-id-login-button']")).shouldBe(Condition.visible);
+//        $(By.xpath("//button[@data-cy='smart-id-login-button']")).click();
+//        $(By.xpath("//esto-error[@data-cy='smart-id-validation-error']")).shouldBe(Condition.visible);
 
         LoginPage loginPage = new LoginPage();
         loginPage.checkSmartIdMethodButton();
@@ -87,29 +87,39 @@ public class ProfileEsto {
         loginPage.checkSmartIdInputField();
         loginPage.checkSmartIdLoginButton();
         loginPage.InsertIdCode("255644");
-
-
-
+        loginPage.checkSmartIdLoginButton();
+        loginPage.clickSmartIdLoginButton();
+        loginPage.checkSmartIdValidationError();
 
     }
 
     @Test
     public void negativeTestOfAuthorizationPassword() {
         Configuration.holdBrowserOpen = true;
-        open("https://profile.esto.ee/login");
+//        open("https://profile.esto.ee/login");
 
-        $(By.xpath("//a[@data-cy='method-password']")).shouldBe(Condition.visible);
-        $(By.xpath("//a[@data-cy='method-password']")).click();
-        $(By.xpath("//esto-text-input[@data-cy='username-input']")).shouldBe(Condition.visible);
-        SelenideElement usernameInput = $(By.xpath("//*[@data-cy='username-input']/div/input"));
-        usernameInput.setValue("Test");
-        $(By.xpath("//esto-text-input[@data-cy='password-input']")).shouldBe(Condition.visible);
-        SelenideElement usernameInputLogin = $(By.xpath("//*[@data-cy='password-input']/div/input"));
-        usernameInputLogin.setValue("143ref");
-        $(By.xpath("//button[@data-cy='password-login-button']")).shouldBe(Condition.visible);
-        $(By.xpath("//button[@data-cy='password-login-button']")).click();
+//        $(By.xpath("//a[@data-cy='method-password']")).shouldBe(Condition.visible);
+//        $(By.xpath("//a[@data-cy='method-password']")).click();
+////        $(By.xpath("//esto-text-input[@data-cy='username-input']")).shouldBe(Condition.visible);
+//        SelenideElement usernameInput = $(By.xpath("//*[@data-cy='username-input']/div/input"));
+//        usernameInput.setValue("Test");
+//        $(By.xpath("//esto-text-input[@data-cy='password-input']")).shouldBe(Condition.visible);
+//        SelenideElement usernameInputLogin = $(By.xpath("//*[@data-cy='password-input']/div/input"));
+//        usernameInputLogin.setValue("143ref");
+//        $(By.xpath("//button[@data-cy='password-login-button']")).shouldBe(Condition.visible);
+//        $(By.xpath("//button[@data-cy='password-login-button']")).click();
+//        $(By.xpath("//span[@data-cy='password-login-error']")).shouldBe(Condition.visible);
 
-        $(By.xpath("//span[@data-cy='password-login-error']")).shouldBe(Condition.visible);
+        LoginPage loginPage = new LoginPage();
+        loginPage.checkPasswordMethodButton();
+        loginPage.clickPasswordMethodButton();
+        loginPage.checkPasswordMethodUsernameField();
+        loginPage.InsertUsername("Test");
+        loginPage.checkPasswordMethodPasswordField();
+        loginPage.InsertPassword("sfeifw");
+        loginPage.checkPasswordLoginButton();
+        loginPage.clickPasswordLoginButton();
+        loginPage.checkPasswordLoginError();
     }
 
 }
